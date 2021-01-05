@@ -1,0 +1,74 @@
+--- caja-1.22.0.ebuild	2019-03-16 12:23:05.290057512 +0000
++++ caja-1.22.1.ebuild	2019-04-27 09:18:59.385931853 +0100
+@@ -1,4 +1,4 @@
+-# Copyright 1999-2019 Gentoo Foundation
++# Copyright 1999-2019 Gentoo Authors
+ # Distributed under the terms of the GNU General Public License v2
+ 
+ EAPI=6
+@@ -15,44 +15,42 @@
+ LICENSE="GPL-2 LGPL-2 FDL-1.1"
+ SLOT="0"
+ 
+-IUSE="+introspection +mate olde-gentoo packagekit xmp"
++IUSE="+introspection +mate packagekit xmp"
+ 
+-COMMON_DEPEND="dev-libs/atk:0
++RDEPEND="
++	dev-libs/atk
+ 	>=dev-libs/glib-2.50:2
+ 	>=dev-libs/libxml2-2.4.7:2
+-	gnome-base/dconf:0
+-	!olde-gentoo? (
+-		>=gnome-base/gvfs-1.10.1:0[udisks]
+-	)
++	gnome-base/dconf
++	>=gnome-base/gvfs-1.10.1:0[udisks]
+ 	>=mate-base/mate-desktop-1.17.3:0
+ 	>=media-libs/libexif-0.6.14:0
+-	virtual/libintl:0
+-	x11-libs/cairo:0
++	virtual/libintl
++	x11-libs/cairo
+ 	x11-libs/gdk-pixbuf:2
+ 	>=x11-libs/gtk+-3.22:3[introspection?]
+ 	>=x11-libs/libnotify-0.7.0:0
+-	x11-libs/libICE:0
+-	x11-libs/libSM:0
+-	x11-libs/libX11:0
+-	x11-libs/libXext:0
+-	x11-libs/libXft:0
+-	x11-libs/libXrender:0
+-	>=x11-libs/pango-1.1.2:0
++	x11-libs/libICE
++	x11-libs/libSM
++	x11-libs/libX11
++	x11-libs/libXext
++	x11-libs/libXft
++	x11-libs/libXrender
++	>=x11-libs/pango-1.1.2
+ 	introspection? ( >=dev-libs/gobject-introspection-0.6.4:= )
+ 	packagekit? ( app-admin/packagekit-base )
+ 	xmp? ( >=media-libs/exempi-1.99.5:2 )
+ 	!!mate-base/mate-file-manager"
+ 
+-RDEPEND="${COMMON_DEPEND}"
+-
+-DEPEND="${COMMON_DEPEND}
+-	>=dev-lang/perl-5:0=
+-	dev-util/gdbus-codegen:0
++DEPEND="${RDEPEND}
++	>=dev-lang/perl-5:=
++	dev-util/gdbus-codegen
++	dev-util/glib-utils
+ 	dev-util/gtk-doc
+ 	dev-util/gtk-doc-am
+-	>=dev-util/intltool-0.40.1:*
+-	sys-devel/gettext:*
+-	virtual/pkgconfig:*"
++	>=dev-util/intltool-0.40.1
++	sys-devel/gettext
++	virtual/pkgconfig"
+ 
+ PDEPEND="mate? ( >=x11-themes/mate-icon-theme-${MATE_BRANCH} )"
+ 

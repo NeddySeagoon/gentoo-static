@@ -1,0 +1,28 @@
+--- caja-1.18.5.ebuild	2018-02-18 19:36:20.193421152 +0000
++++ caja-1.18.3.ebuild	2017-06-11 12:37:40.290808292 +0100
+@@ -8,20 +8,22 @@
+ inherit mate virtualx
+ 
+ if [[ ${PV} != 9999 ]]; then
+-	KEYWORDS="~amd64 ~arm ~arm64 ~x86"
++	KEYWORDS="~amd64 ~arm ~x86"
+ fi
+ 
+ DESCRIPTION="Caja file manager for the MATE desktop"
+ LICENSE="GPL-2 LGPL-2 FDL-1.1"
+ SLOT="0"
+ 
+-IUSE="+introspection +mate packagekit xmp"
++IUSE="+introspection +mate olde-gentoo packagekit xmp"
+ 
+ COMMON_DEPEND="dev-libs/atk:0
+ 	>=dev-libs/glib-2.36:2
+ 	>=dev-libs/libxml2-2.4.7:2
+ 	gnome-base/dconf:0
+-	>=gnome-base/gvfs-1.10.1:0[udisks]
++	!olde-gentoo? (
++		>=gnome-base/gvfs-1.10.1:0[udisks]
++	)
+ 	>=mate-base/mate-desktop-1.17.0:0
+ 	>=media-libs/libexif-0.6.14:0
+ 	virtual/libintl:0

@@ -1,0 +1,12 @@
+--- static-dev-0.1.ebuild	2013-04-27 10:01:32.000000000 +0000
++++ static-dev-0.1-r1.ebuild	2013-05-12 20:30:53.448610460 +0000
+@@ -14,8 +14,7 @@
+ RDEPEND="sys-apps/makedev"
+ 
+ pkg_preinst() {
+-	if [[ -d ${ROOT}/dev/.udev || -c ${ROOT}/dev/.devfs ]] || \
+-	   ! awk '$2 == "/dev" && $3 == "devtmpfs" { exit 1 }' /proc/mounts ; then
++	if [[ -d ${ROOT}/dev/.udev || -c ${ROOT}/dev/.devfs ]]; then
+ 		echo ""
+ 		eerror "We have detected that you currently use udev or devfs or devtmpfs"
+ 		eerror "and this ebuild cannot install to the same mount-point."
