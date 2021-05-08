@@ -1,9 +1,8 @@
 # Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/static-dev/static-dev-0.1.ebuild,v 1.15 2013/04/27 09:51:05 vapier Exp $
 
 DESCRIPTION="A skeleton, statically managed /dev"
-HOMEPAGE="http://bugs.gentoo.org/107875"
+HOMEPAGE="https://bugs.gentoo.org/107875"
 SRC_URI=""
 
 LICENSE="GPL-2"
