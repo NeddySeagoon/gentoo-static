@@ -1,7 +1,7 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=7
 DESCRIPTION="Fortune database of quotes from forums.gentoo.org"
 HOMEPAGE="https://forums.gentoo.org/"
 SRC_URI="mirror://gentoo/gentoo-forums-${PV}.gz
@@ -9,13 +9,10 @@ SRC_URI="mirror://gentoo/gentoo-forums-${PV}.gz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~m68k ~mips ~ppc64 ~sh ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~x86-solaris"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~m68k ~mips ~ppc64 ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x86-solaris"
 IUSE="offensive"
 
 DEPEND="games-misc/fortune-mod"
-RDEPEND="${DEPEND}"
-
-S=${WORKDIR}
 
 src_compile() {
 	mv gentoo-forums-${PV} gentoo-forums || die
