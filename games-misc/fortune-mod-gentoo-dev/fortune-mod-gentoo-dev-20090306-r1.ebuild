@@ -17,8 +17,9 @@ IUSE="offensive"
 RDEPEND="games-misc/fortune-mod"
 # Perl is used to build stuff only
 # and strfile belongs to fortune-mod
-DEPEND="dev-lang/perl
-		${RDEPEND}"
+RDEPEND="dev-lang/perl"
+
+S="${WORKDIR}/${MY_P}"
 
 src_install() {
 	default
