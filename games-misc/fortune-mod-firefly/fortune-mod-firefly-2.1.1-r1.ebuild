@@ -13,6 +13,8 @@ IUSE=""
 
 RDEPEND="games-misc/fortune-mod"
 
+S=${WORKDIR}
+
 src_install() {
 	insinto /usr/share/fortune
 	doins firefly firefly.dat
