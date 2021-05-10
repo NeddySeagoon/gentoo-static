@@ -16,6 +16,7 @@ S=${WORKDIR}
 
 src_prepare() {
 	cp "${DISTDIR}"/${A} "${S}"/pqf-${PV}
+	eapply_user
 }
 
 src_compile() {
