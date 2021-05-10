@@ -12,6 +12,8 @@ KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~m68k ~mips ~ppc64 ~x86 ~amd64-linux ~
 
 RDEPEND="games-misc/fortune-mod"
 
+S=${WORKDIR}/${PN/fortune-mod-/}
+
 src_install() {
 	insinto /usr/share/fortune
 	doins dubya dubya.dat
