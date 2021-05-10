@@ -14,6 +14,8 @@ IUSE="offensive"
 
 RDEPEND="games-misc/fortune-mod"
 
+S=${WORKDIR}
+
 src_compile() {
 	mv gentoo-forums-${PV} gentoo-forums || die
 	use offensive && cat gentoo-forums-offensive-${PV} >> gentoo-forums
