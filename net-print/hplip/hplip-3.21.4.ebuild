@@ -3,7 +3,7 @@
 
 EAPI=7
 
-PYTHON_COMPAT=( python3_{7,8} )
+PYTHON_COMPAT=( python3_{7,8,9} )
 PYTHON_REQ_USE="threads(+),xml"
 
 # 14 and 15 spit out a lot of warnings about subdirs
@@ -14,13 +14,13 @@ inherit autotools linux-info python-single-r1 readme.gentoo-r1 udev
 DESCRIPTION="HP Linux Imaging and Printing - Print, scan, fax drivers and service tools"
 HOMEPAGE="https://developers.hp.com/hp-linux-imaging-and-printing"
 SRC_URI="mirror://sourceforge/hplip/${P}.tar.gz
-		https://dev.gentoo.org/~billie/distfiles/${PN}-3.21.2-patches-1.tar.xz"
+		https://dev.gentoo.org/~billie/distfiles/${PN}-3.21.4-patches-1.tar.xz"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~arm64 ~ppc ~ppc64 ~x86"
 
-IUSE="doc fax +hpcups hpijs kde libnotify libressl -libusb0 minimal parport policykit qt5 scanner +snmp static-ppds udev X"
+IUSE="doc fax +hpcups hpijs kde libnotify libusb0 minimal parport policykit qt5 scanner +snmp static-ppds udev X"
 
 COMMON_DEPEND="
 	net-print/cups
@@ -35,10 +35,9 @@ COMMON_DEPEND="
 			media-gfx/sane-backends
 		)
 		snmp? (
-			!libressl? ( dev-libs/openssl:0= )
-			libressl? ( dev-libs/libressl:= )
+			dev-libs/openssl:0=
 			net-analyzer/net-snmp:=
-			$(python_gen_cond_dep 'net-dns/avahi[dbus,${PYTHON_MULTI_USEDEP}]')
+			net-dns/avahi[dbus,python,${PYTHON_SINGLE_USEDEP}]
 		)
 	)
 "
@@ -132,10 +131,11 @@ src_prepare() {
 	# Fix for Gentoo bug https://bugs.gentoo.org/show_bug.cgi?id=345725
 	# Upstream bug: https://bugs.launchpad.net/hplip/+bug/880847,
 	# https://bugs.launchpad.net/hplip/+bug/500086
-	local udevdir=$(get_udevdir)
-	sed -i -e "s|/etc/udev|${udevdir}|g" \
-		$(find . -type f -exec grep -l /etc/udev {} +) || die
-
+	if use udev ; then
+		 local udevdir=$(get_udevdir)
+		sed -i -e "s|/etc/udev|${udevdir}|g" \
+			$(find . -type f -exec grep -l /etc/udev {} +) || die
+	fi
 	# Force recognition of Gentoo distro by hp-check
 	sed -i \
 		-e "s:file('/etc/issue', 'r').read():'Gentoo':" \
@@ -220,8 +220,9 @@ src_configure() {
 	# disable class driver for now
 	econf \
 		--disable-class-driver \
-		--disable-foomatic-rip-hplip-install \
 		--disable-cups11-build \
+		--disable-foomatic-rip-hplip-install \
+		--disable-imageProcessor-build \
 		--disable-lite-build \
 		--disable-shadow-build \
 		--disable-qt3 \
