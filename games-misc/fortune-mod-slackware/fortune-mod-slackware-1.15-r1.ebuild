@@ -17,6 +17,8 @@ IUSE="offensive"
 
 RDEPEND="games-misc/fortune-mod"
 
+S=${WORKDIR}
+
 pkg_setup() {
 	if ! use offensive ; then
 		elog "These fortunes have offensive content. Enable offensive USE Flag"
