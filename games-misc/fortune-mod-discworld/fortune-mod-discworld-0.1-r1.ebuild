@@ -14,6 +14,8 @@ RESTRICT="mirror"
 
 RDEPEND="games-misc/fortune-mod"
 
+S=${WORKDIR}/${MY_P}
+
 src_install() {
 	insinto /usr/share/fortune
 	doins discworld discworld.dat
