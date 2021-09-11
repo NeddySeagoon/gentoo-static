@@ -19,6 +19,8 @@ PATCHES=(
 	"${FILESDIR}"/spelling.patch
 )
 
+S=${WORKDIR}
+
 src_prepare() {
 	default
 	strfile osfortune || die
