@@ -16,6 +16,8 @@ IUSE="offensive"
 DEPEND="games-misc/fortune-mod"
 RDEPEND="${DEPEND}"
 
+S=${WORKDIR}/kernelcookies-${PV}
+
 src_prepare() {
 	default
 
