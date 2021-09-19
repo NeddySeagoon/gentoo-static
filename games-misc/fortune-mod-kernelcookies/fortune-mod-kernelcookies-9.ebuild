@@ -19,14 +19,14 @@ RDEPEND="${DEPEND}"
 S=${WORKDIR}/kernelcookies-${PV}
 
 src_prepare() {
-	default
-
 	# bug #64985
 	if ! use offensive ; then
 		rm -f *.dat || die
 		eapply "${FILESDIR}"/${PV}-offensive.patch
 		strfile -s kernelcookies || die
 	fi
+
+	default
 }
 
 src_install() {
