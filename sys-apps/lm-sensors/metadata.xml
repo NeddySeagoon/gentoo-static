@@ -1,13 +1,9 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer type="person">
-		<email>polynomial-c@gentoo.org</email>
-		<name>Lars Wendler</name>
-	</maintainer>
-	<maintainer type="person">
-		<email>whissi@gentoo.org</email>
-		<name>Thomas Deutschmann</name>
+		<email>marecki@gentoo.org</email>
+		<name>Marek Szuba</name>
 	</maintainer>
 	<slots>
 		<subslots>Reflect ABI of libsensors.so.</subslots>
@@ -18,6 +14,9 @@
 			to find settings on your own for your system if somebody else
 			has already created such a configuration for sensors/mainboards
 			you are using.
+		</flag>
+		<flag name="olde-gentoo">
+			Enable building  with an old openrc with built in tmpfs support.
 		</flag>
 		<flag name="sensord">
 			Enable sensord - a daemon that can be used to
