@@ -14,9 +14,9 @@ HOMEPAGE="https://mate-desktop.org/"
 
 LICENSE="GPL-2+ GPL-3+ HPND LGPL-2+ LGPL-2.1+"
 SLOT="0"
-IUSE="debug elogind gles2 gnome-keyring ipv6 systemd +xtrans"
+IUSE="debug elogind gles2 gnome-keyring ipv6 systemd udev +xtrans"
 
-#REQUIRED_USE="^^ ( elogind systemd )"
+REQUIRED_USE="udev? ( ^^ ( elogind systemd ) )"
 
 # x11-misc/xdg-user-dirs{,-gtk} are needed to create the various XDG_*_DIRs, and
 # create .config/user-dirs.dirs which is read by glib to get G_USER_DIRECTORY_*
@@ -37,7 +37,7 @@ COMMON_DEPEND="
 	x11-libs/libXrender
 	x11-libs/libXtst
 	x11-libs/pango
-	gles2? ( media-libs/mesa[egl,gles2] )
+	gles2? ( media-libs/mesa[egl(+),gles2] )
 	systemd? ( sys-apps/systemd )
 	elogind? ( sys-auth/elogind )
 	xtrans? ( x11-libs/xtrans )
