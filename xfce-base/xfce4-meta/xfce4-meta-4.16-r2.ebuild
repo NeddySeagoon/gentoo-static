@@ -27,7 +27,7 @@ RDEPEND="x11-themes/hicolor-icon-theme
 	>=xfce-base/xfdesktop-4.16
 	>=xfce-base/xfwm4-4.16
 	udev? ( >=xfce-extra/thunar-volman-4.16 )
-	>=xfce-extra/tumbler-4.16
+	>=xfce-base/tumbler-4.16
 	!minimal? (
 		media-fonts/dejavu
 		virtual/freedesktop-icon-theme
