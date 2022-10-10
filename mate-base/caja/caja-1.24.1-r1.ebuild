@@ -5,7 +5,7 @@ EAPI=6
 
 MATE_LA_PUNT="yes"
 
-inherit mate virtualx
+inherit mate
 
 if [[ ${PV} != 9999 ]]; then
 	KEYWORDS="amd64 ~arm ~arm64 ~loong ~riscv x86"
@@ -41,7 +41,6 @@ COMMON_DEPEND="
 	x11-libs/libXrender
 	>=x11-libs/pango-1.1.2
 	introspection? ( >=dev-libs/gobject-introspection-0.6.4:= )
-	packagekit? ( app-admin/packagekit-base )
 	xmp? ( >=media-libs/exempi-1.99.5:2 )
 "
 
