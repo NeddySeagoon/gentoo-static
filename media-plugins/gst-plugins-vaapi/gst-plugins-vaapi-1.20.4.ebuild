@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
-PYTHON_COMPAT=( python3_{8..10} )
+PYTHON_COMPAT=( python3_{8..11} )
 
 inherit gstreamer-meson python-any-r1
 
@@ -13,8 +13,8 @@ SRC_URI="https://gstreamer.freedesktop.org/src/${MY_PN}/${MY_PN}-${PV}.tar.xz"
 
 LICENSE="LGPL-2.1+"
 SLOT="1.0"
-KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
-IUSE="+drm +egl gles2 +opengl wayland +udev +X" # Keep default enabled IUSE in sync with gst-plugins-base and libva
+KEYWORDS="amd64 arm64 ~loong ppc64 ~riscv x86"
+IUSE="+drm +egl gles2 +opengl udev wayland +X" # Keep default enabled IUSE in sync with gst-plugins-base and libva
 
 # gst-vaapi configure is based around GL platform mainly, unlike gst-plugins-bad that goes by GL API mainly; for less surprises,
 # we design gst-vaapi ebuild in terms of GL API as main choice as well, meaning that USE opengl and/or gles2 is required to
@@ -50,7 +50,7 @@ GL_DEPS="
 RDEPEND="
 	>=media-libs/gst-plugins-base-${GST_REQ}:${SLOT}[${MULTILIB_USEDEP}]
 	>=media-libs/gst-plugins-bad-${GST_REQ}:${SLOT}[${MULTILIB_USEDEP}]
-	>=x11-libs/libva-1.4.0:=[drm(+)?,wayland?,X?,${MULTILIB_USEDEP}]
+	>=media-libs/libva-1.4.0:=[drm(+)?,wayland?,X?,${MULTILIB_USEDEP}]
 	drm? (
 		udev? ( >=virtual/libudev-208:=[${MULTILIB_USEDEP}] )
 		>=x11-libs/libdrm-2.4.98[${MULTILIB_USEDEP}]
