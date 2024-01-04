@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit eutils flag-o-matic multilib pam toolchain-funcs usr-ldscript
+inherit flag-o-matic multilib pam toolchain-funcs usr-ldscript
 
 DESCRIPTION="OpenRC manages the services, startup and shutdown of a host"
 HOMEPAGE="https://www.gentoo.org/proj/en/base/openrc/"
