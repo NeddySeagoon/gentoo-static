@@ -1,0 +1,10 @@
+DEFINED_PHASES=install
+DESCRIPTION=Extra fortune cookies for fortune
+EAPI=7
+HOMEPAGE=http://i-want-a-website.com/about-linux/downloads.shtml
+KEYWORDS=~alpha ~amd64 ~arm ~arm64 ~hppa ~m68k ~mips ~ppc64 ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x86-solaris
+LICENSE=freedist fairuse
+RDEPEND=games-misc/fortune-mod
+SLOT=0
+SRC_URI=http://humorix.org/downloads/humorixfortunes-1.4.tar.gz
+_md5_=3b95cfa226f5c416843a665ba0ce00c5

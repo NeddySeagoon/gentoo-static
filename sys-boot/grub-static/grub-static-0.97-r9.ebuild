@@ -1,14 +1,16 @@
 # Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
+#EAPI=7
 
 # XXX: we need to review menu.lst vs grub.conf handling.  We've been converting
 #      all systems to grub.conf (and symlinking menu.lst to grub.conf), but
 #      we never updated any of the source code (it still all wants menu.lst),
 #      and there is no indication that upstream is making the transition.
 
-inherit eutils mount-boot toolchain-funcs linux-info
+inherit mount-boot toolchain-funcs linux-info
+#inherit eutils mount-boot toolchain-funcs linux-info
 
 PATCHVER="1.9" # Not used, just for tracking with main grub
 

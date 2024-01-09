@@ -1,0 +1,11 @@
+DEFINED_PHASES=install
+DESCRIPTION=Quotes from Discworld novels
+EAPI=7
+HOMEPAGE=http://www.splitbrain.org/projects/fortunes/discworld
+KEYWORDS=~amd64 ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x86-solaris
+LICENSE=fairuse
+RDEPEND=games-misc/fortune-mod
+RESTRICT=mirror
+SLOT=0
+SRC_URI=http://www.splitbrain.org/_media/projects/fortunes/fortune-discworld.tgz
+_md5_=a1820561678c917602e232b9923b6c71
