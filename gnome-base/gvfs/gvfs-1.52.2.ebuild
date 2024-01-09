@@ -48,7 +48,7 @@ RDEPEND="
 		>=sys-fs/fuse-3.0.0:3
 		virtual/tmpfiles
 	)
-	udisks? ( >=sys-fs/udisks-1.97:2 )
+	udev? ( udisks? ( >=sys-fs/udisks-1.97:2 ) )
 	systemd? ( >=sys-apps/systemd-206:0= )
 	elogind? ( >=sys-auth/elogind-229:0= )
 	ios? (
