@@ -11,5 +11,5 @@ PDEPEND=netifrc? ( net-misc/netifrc )
 RDEPEND=ncurses? ( sys-libs/ncurses:0= ) pam? ( sys-auth/pambase ) tools? ( dev-lang/perl ) audit? ( sys-process/audit ) sys-process/psmisc !<sys-process/procps-3.3.9-r2 selinux? ( sys-apps/policycoreutils sys-libs/libselinux ) !<sys-apps/baselayout-2.1-r1 !<sys-fs/udev-init-scripts-27 !prefix? ( || ( >=sys-apps/sysvinit-2.86-r6 sys-process/runit ) ) selinux? ( sec-policy/selinux-base-policy sec-policy/selinux-openrc )
 SLOT=0
 SRC_URI=https://dev.gentoo.org/~williamh/dist/openrc-0.17.tar.bz2
-_eclasses_=toolchain-funcs	862d337d98edb576796827be2c6b11ca	multilib	c19072c3cd7ac5cb21de013f7e9832e0	flag-o-matic	be27a904c614cb93ae037762dc69bcc2	pam	b56d0c9c20fc5b553f13c8ae165a10a5	usr-ldscript	ff03a5d223e97515fa25b5cae97ebda9
+_eclasses_=toolchain-funcs	e56c7649b804f051623c8bc1a1c44084	multilib	c19072c3cd7ac5cb21de013f7e9832e0	flag-o-matic	78cf3cc2d5572fddf5e5e10c70f7c81a	pam	b56d0c9c20fc5b553f13c8ae165a10a5	usr-ldscript	ff03a5d223e97515fa25b5cae97ebda9
 _md5_=03d33a4dc1f21aa17615f60362a6cefd

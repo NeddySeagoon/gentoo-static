@@ -1,4 +1,4 @@
-BDEPEND=|| ( dev-lang/python:3.11 dev-lang/python:3.10 ) dev-libs/libxslt sys-devel/gettext >=dev-util/meson-0.62.2 >=dev-util/ninja-1.8.2 dev-util/meson-format-array >=dev-vcs/git-1.8.2.1[curl]
+BDEPEND=|| ( dev-lang/python:3.11 dev-lang/python:3.10 ) dev-libs/libxslt sys-devel/gettext >=dev-build/meson-1.2.1 app-alternatives/ninja dev-build/meson-format-array >=dev-vcs/git-1.8.2.1[curl]
 DEFINED_PHASES=compile configure install setup test unpack
 DESCRIPTION=X keyboard configuration database
 EAPI=7
@@ -7,5 +7,5 @@ INHERIT=meson python-any-r1 git-r3
 LICENSE=MIT
 PROPERTIES=live
 SLOT=0
-_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ninja-utils	f3010c780f65d1bb5aea15a9af1adc9c	eapi8-dosym	5ac4857ad078256d939c44f7c64197a9	toolchain-funcs	862d337d98edb576796827be2c6b11ca	multilib	c19072c3cd7ac5cb21de013f7e9832e0	python-utils-r1	12aa0037eb004139215ff04894d52b28	meson	08b7183c3f4811568ee93eb0f79a89fe	python-any-r1	f5169813d1619761b459800587005fd2	git-r3	2358a7b20091609e24bd3a83b3ac5991
+_eclasses_=multiprocessing	30ead54fa2e2b5f9cd4e612ffc34d0fe	ninja-utils	2df4e452cea39a9ec8fb543ce059f8d6	eapi8-dosym	5ac4857ad078256d939c44f7c64197a9	toolchain-funcs	e56c7649b804f051623c8bc1a1c44084	multilib	c19072c3cd7ac5cb21de013f7e9832e0	python-utils-r1	042f4cc53680245bf99a84669b94155a	meson	e322276188f86eacb29ae081ba5485c8	python-any-r1	f5169813d1619761b459800587005fd2	git-r3	86fa1f157b70b9d2ff340c4633b1cf4b
 _md5_=def0cab287ac713cb39cb0b0312fd18b

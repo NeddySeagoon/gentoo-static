@@ -10,5 +10,5 @@ LICENSE=BSD
 RDEPEND=app-text/recode:0=
 SLOT=0
 SRC_URI=http://www.redellipse.net/code/downloads/fortune-mod-1.99.1.tar.gz
-_eclasses_=toolchain-funcs	862d337d98edb576796827be2c6b11ca	multilib	c19072c3cd7ac5cb21de013f7e9832e0
+_eclasses_=toolchain-funcs	e56c7649b804f051623c8bc1a1c44084	multilib	c19072c3cd7ac5cb21de013f7e9832e0
 _md5_=c21ae1472d4930a8c1754b6058776809
