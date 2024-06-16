@@ -31,7 +31,7 @@ RDEPEND="
 	base? (
 		=mate-base/caja-${MATE_BRANCH}*
 		=mate-base/mate-applets-meta-${MATE_BRANCH}*
-		=mate-base/mate-control-center-${MATE_BRANCH}*
+		!olde-gentoo? ( =mate-base/mate-control-center-${MATE_BRANCH}* )
 		=mate-extra/mate-media-${MATE_BRANCH}*
 		=x11-misc/mozo-${MATE_BRANCH}*
 		=x11-terms/mate-terminal-${MATE_BRANCH}*
