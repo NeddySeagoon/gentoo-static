@@ -1,11 +1,11 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 MATE_LA_PUNT="yes"
 
-inherit mate
+inherit flag-o-matic mate
 
 MINOR=$(($(ver_cut 2) % 2))
 if [[ ${MINOR} -eq 0 ]]; then
@@ -25,7 +25,7 @@ COMMON_DEPEND="
 	gnome-base/dconf
 	udev? ( >=gnome-base/gvfs-1.10.1:0[udisks] )
 	!udev? ( >=gnome-base/gvfs-1.10.1:0 )
-	>=mate-base/mate-desktop-1.17.3:0
+	>=mate-base/mate-desktop-1.28.0
 	>=media-libs/libexif-0.6.14:0
 	virtual/libintl
 	x11-libs/cairo
@@ -53,6 +53,8 @@ BDEPEND="${COMMON_DEPEND}
 	virtual/pkgconfig
 "
 
+RDEPEND="${COMMON_DEPEND}"
+
 PDEPEND="mate? ( >=x11-themes/mate-icon-theme-${MATE_BRANCH} )"
 
 # TODO: Test fails because Caja is not merged yet:
@@ -68,6 +70,11 @@ src_prepare() {
 }
 
 src_configure() {
+	# https://bugs.gentoo.org/926751
+	# https://github.com/mate-desktop/caja/issues/1774
+	append-flags -fno-strict-aliasing
+	filter-lto
+
 	mate_src_configure \
 		--disable-update-mimedb \
 		$(use_enable introspection) \
