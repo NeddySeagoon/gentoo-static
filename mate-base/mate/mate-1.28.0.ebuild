@@ -1,27 +1,25 @@
-# Copyright 1999-2022 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
-if [[ ${PV} == 9999 ]]; then
-	MATE_BRANCH=9999
-	MATE_THEMES_V=9999
-else
-	MATE_BRANCH="$(ver_cut 1-2)"
-	MATE_THEMES_V=3
+MATE_THEMES_V=3
+MATE_BRANCH="$(ver_cut 1-2)"
+MINOR=$(($(ver_cut 2) % 2))
+
+if [[ ${MINOR} -eq 0 ]]; then
 	KEYWORDS="~amd64 ~arm ~arm64 ~loong ~riscv ~x86"
 fi
 
-SRC_URI=""
 DESCRIPTION="Meta ebuild for MATE, a traditional desktop environment"
 HOMEPAGE="https://mate-desktop.org"
 
 LICENSE="metapackage"
 
 SLOT="0"
-IUSE="+base bluetooth help +notification olde-gentoo +themes +extras"
-
 S="${WORKDIR}"
+
+IUSE="+base bluetooth help +notification olde-gentoo +themes +extras"
 
 RDEPEND="
 	=mate-base/mate-desktop-${MATE_BRANCH}*
@@ -33,7 +31,7 @@ RDEPEND="
 	base? (
 		=mate-base/caja-${MATE_BRANCH}*
 		=mate-base/mate-applets-meta-${MATE_BRANCH}*
-		!olde-gentoo? ( =mate-base/mate-control-center-${MATE_BRANCH}* )
+		=mate-base/mate-control-center-${MATE_BRANCH}*
 		=mate-extra/mate-media-${MATE_BRANCH}*
 		=x11-misc/mozo-${MATE_BRANCH}*
 		=x11-terms/mate-terminal-${MATE_BRANCH}*
@@ -42,6 +40,7 @@ RDEPEND="
 	themes? (
 		=x11-themes/mate-backgrounds-${MATE_BRANCH}*
 		=x11-themes/mate-icon-theme-${MATE_BRANCH}*
+		=x11-themes/mate-themes-${MATE_THEMES_V}*
 	)
 	extras? (
 		=app-arch/engrampa-${MATE_BRANCH}*
@@ -49,15 +48,14 @@ RDEPEND="
 		=app-text/atril-${MATE_BRANCH}*
 		=mate-extra/caja-extensions-${MATE_BRANCH}*
 		=mate-extra/mate-calc-${MATE_BRANCH}*
-		=mate-extra/mate-netbook-${MATE_BRANCH}*
-		!olde-gentoo?
-		(
-			=mate-extra/mate-power-manager-${MATE_BRANCH}*
-			=mate-extra/mate-system-monitor-${MATE_BRANCH}*
-		)
 		=mate-extra/mate-screensaver-${MATE_BRANCH}*
 		=mate-extra/mate-utils-${MATE_BRANCH}*
 		=media-gfx/eom-${MATE_BRANCH}*
+		!olde-gentoo? (
+			=mate-extra/mate-power-manager-${MATE_BRANCH}*
+			=mate-extra/mate-system-monitor-${MATE_BRANCH}*
+		)
+
 	)
 	help? (
 		gnome-extra/yelp
@@ -70,9 +68,6 @@ PDEPEND="
 	virtual/notification-daemon:0"
 
 pkg_postinst() {
-	elog "For installation, usage and troubleshooting details regarding MATE;"
-	elog "read more about it at Gentoo Wiki: https://wiki.gentoo.org/wiki/MATE"
-	elog ""
 	if ! has_version x11-misc/mate-notification-daemon; then
 		elog "If you experience any issues with notifications, please try using"
 		elog "x11-misc/mate-notification-daemon instead your currently installed daemon"
@@ -82,5 +77,4 @@ pkg_postinst() {
 	elog "		mate-extra/caja-dropbox"
 	elog "		mate-extra/mate-user-share"
 	elog "		mate-extra/caja-admin"
-	elog "		mate-extra/caja-hide"
 }
