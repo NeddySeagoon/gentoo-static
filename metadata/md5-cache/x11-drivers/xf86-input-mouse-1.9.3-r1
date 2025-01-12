@@ -11,4 +11,4 @@ RDEPEND=>=x11-base/xorg-server-1.7 x11-base/xorg-server:= >=x11-base/xorg-server
 SLOT=0
 SRC_URI=https://www.x.org/releases/individual/driver/xf86-input-mouse-1.9.3.tar.bz2
 _eclasses_=gnuconfig	ddeb9f8caff1b5f71a09c75b7534df79	toolchain-funcs	14648d8795f7779e11e1bc7cf08b7536	multilib	b2a329026f2e404e9e371097dda47f96	libtool	6b28392a775f807c8be5fc7ec9a605b9	autotools	7d91cc798a8afd8f4e0c6e9587296ebe	flag-o-matic	f14aba975c94ccaa9f357a27e3b17ffe	xorg-3	ce675c0f5f6f8e0bc289d800e40c502f
-_md5_=f0a3cec46998691f3e35a9d6005e6d1e
+_md5_=76ab5dc9ab9ed4ec51af934cbbd23483

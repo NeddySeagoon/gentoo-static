@@ -1,8 +1,8 @@
-BDEPEND=sys-devel/gnuconfig >=app-portage/elt-patches-20170815 || ( >=sys-devel/automake-1.16.5:1.16 ) || ( >=sys-devel/autoconf-2.72-r1:2.72 >=sys-devel/autoconf-2.71-r6:2.71 ) >=sys-devel/libtool-2.4.7 virtual/pkgconfig
+BDEPEND=>=app-portage/elt-patches-20240116 virtual/pkgconfig
 DEFINED_PHASES=compile configure install postinst postrm prepare unpack
 DEPEND=>=x11-base/xorg-server-1.10 x11-base/xorg-proto >=x11-base/xorg-server-1.20[xorg]
 DESCRIPTION=Keyboard input driver
-EAPI=7
+EAPI=8
 HOMEPAGE=https://www.x.org/wiki/ https://gitlab.freedesktop.org/xorg/driver/xf86-input-keyboard
 INHERIT=xorg-3
 KEYWORDS=~alpha amd64 arm arm64 ~hppa ~mips ppc ppc64 sparc x86 ~amd64-linux ~x86-linux
@@ -10,5 +10,5 @@ LICENSE=MIT
 RDEPEND=>=x11-base/xorg-server-1.10 x11-base/xorg-server:= >=x11-base/xorg-server-1.20[xorg]
 SLOT=0
 SRC_URI=https://www.x.org/releases/individual/driver/xf86-input-keyboard-1.9.0.tar.bz2
-_eclasses_=gnuconfig	b6b3e92f8b8c996400074b5f61a59256	toolchain-funcs	e56c7649b804f051623c8bc1a1c44084	multilib	c19072c3cd7ac5cb21de013f7e9832e0	libtool	9d3a9a889a6fa62ae794f817c156491b	autotools	5f729b9cb10d5eda573cd604c93c6dc5	flag-o-matic	78cf3cc2d5572fddf5e5e10c70f7c81a	xorg-3	cb64e04b77bf52d600ce2aa370dfbcb6
-_md5_=49d8f729c8f68f757f4971396ac716fa
+_eclasses_=gnuconfig	ddeb9f8caff1b5f71a09c75b7534df79	toolchain-funcs	14648d8795f7779e11e1bc7cf08b7536	multilib	b2a329026f2e404e9e371097dda47f96	libtool	6b28392a775f807c8be5fc7ec9a605b9	autotools	7d91cc798a8afd8f4e0c6e9587296ebe	flag-o-matic	f14aba975c94ccaa9f357a27e3b17ffe	xorg-3	ce675c0f5f6f8e0bc289d800e40c502f
+_md5_=6b0877147ae3c0461157b688c549d265
