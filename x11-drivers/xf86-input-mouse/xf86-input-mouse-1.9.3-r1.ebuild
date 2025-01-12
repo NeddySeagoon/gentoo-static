@@ -1,7 +1,10 @@
 # Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
+
+XORG_TARBALL_SUFFIX="bz2"
+
 inherit xorg-3
 
 DESCRIPTION="X.Org driver for mouse input devices"
