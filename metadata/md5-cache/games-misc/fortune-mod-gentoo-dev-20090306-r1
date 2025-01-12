@@ -8,4 +8,4 @@ LICENSE=GPL-2
 RDEPEND=dev-lang/perl
 SLOT=0
 SRC_URI=mirror://gentoo/fortune-gentoo-dev-20090306.tar.bz2 https://dev.gentoo.org/~robbat2/distfiles/fortune-gentoo-dev-20090306.tar.bz2
-_md5_=c36c9ec8d49bde80913998ea2b412788
+_md5_=b5ae5620c5b9e4757c59c928c123b88f

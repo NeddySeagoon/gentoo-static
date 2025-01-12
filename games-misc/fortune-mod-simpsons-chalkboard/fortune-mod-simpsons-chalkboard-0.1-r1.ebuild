@@ -9,14 +9,15 @@ DESCRIPTION="Quotes from Bart Simpson's Chalkboard, shown at the opening of Simp
 HOMEPAGE="http://www.splitbrain.org/projects/fortunes/simpsons"
 SRC_URI="http://www.splitbrain.org/_media/projects/fortunes/${MY_P}.tgz"
 
+S=${WORKDIR}/${MY_P}
+
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~m68k ~mips ~ppc64 ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x86-solaris"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~m68k ~mips ~ppc64 ~x86 ~amd64-linux ~x86-linux ~ppc-macos"
+
 RESTRICT="mirror"
 
 RDEPEND="games-misc/fortune-mod"
-
-S=${WORKDIR}/${MY_P}
 
 src_install() {
 	insinto /usr/share/fortune

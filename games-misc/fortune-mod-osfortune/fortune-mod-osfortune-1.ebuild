@@ -6,11 +6,12 @@ EAPI=7
 DESCRIPTION="Open sources fortune file"
 HOMEPAGE="https://web.archive.org/web/20030803031143/http://www.dibona.com/opensources/index.shtml"
 SRC_URI="https://web.archive.org/web/20030919200547/http://www.dibona.com/opensources/osfortune.tar.gz"
+
 S="${WORKDIR}"
 
 LICENSE="GPL-1"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~m68k ~mips ~ppc64 ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x86-solaris"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~m68k ~mips ~ppc64 ~x86 ~amd64-linux ~x86-linux ~ppc-macos"
 
 DEPEND="games-misc/fortune-mod"
 RDEPEND="${DEPEND}"
@@ -18,8 +19,6 @@ RDEPEND="${DEPEND}"
 PATCHES=(
 	"${FILESDIR}"/spelling.patch
 )
-
-S=${WORKDIR}
 
 src_prepare() {
 	default

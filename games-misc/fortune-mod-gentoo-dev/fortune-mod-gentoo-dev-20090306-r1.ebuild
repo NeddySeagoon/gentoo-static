@@ -9,6 +9,8 @@ MY_P="${MY_PN}-${PV}"
 SRC_URI="mirror://gentoo/${MY_P}.tar.bz2
 		 https://dev.gentoo.org/~robbat2/distfiles/${MY_P}.tar.bz2"
 
+S="${WORKDIR}/${MY_P}"
+
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~m68k ~mips ~ppc64 ~x86"
@@ -18,8 +20,6 @@ RDEPEND="games-misc/fortune-mod"
 # Perl is used to build stuff only
 # and strfile belongs to fortune-mod
 RDEPEND="dev-lang/perl"
-
-S="${WORKDIR}/${MY_P}"
 
 src_install() {
 	default

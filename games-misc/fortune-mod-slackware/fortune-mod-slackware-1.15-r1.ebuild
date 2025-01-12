@@ -10,14 +10,15 @@ DESCRIPTION="This fortune mod is a collection of quotes seen on AOLS (Slackware)
 HOMEPAGE="http://fauxascii.com/linux/mod_quotes.html"
 SRC_URI="http://fauxascii.com/linux/data/${MY_PN}-${PV}.tgz"
 
+S=${WORKDIR}
+
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~m68k ~mips ~ppc64 ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x86-solaris"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~m68k ~mips ~ppc64 ~x86 ~amd64-linux ~x86-linux ~ppc-macos"
+
 IUSE="offensive"
 
 RDEPEND="games-misc/fortune-mod"
-
-S=${WORKDIR}
 
 pkg_setup() {
 	if ! use offensive ; then

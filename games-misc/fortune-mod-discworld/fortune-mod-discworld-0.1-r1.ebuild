@@ -7,14 +7,14 @@ DESCRIPTION="Quotes from Discworld novels"
 HOMEPAGE="http://www.splitbrain.org/projects/fortunes/discworld"
 SRC_URI="http://www.splitbrain.org/_media/projects/fortunes/${MY_P}.tgz"
 
+S=${WORKDIR}/${MY_P}
+
 LICENSE="fairuse"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x86-solaris"
+KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux ~ppc-macos"
 RESTRICT="mirror"
 
 RDEPEND="games-misc/fortune-mod"
-
-S=${WORKDIR}/${MY_P}
 
 src_install() {
 	insinto /usr/share/fortune

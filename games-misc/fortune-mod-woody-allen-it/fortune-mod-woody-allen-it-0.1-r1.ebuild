@@ -8,7 +8,7 @@ SRC_URI="http://utenti.lycos.it/gutter/${PN}/${P}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x86-solaris"
+KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux ~ppc-macos"
 
 RDEPEND="games-misc/fortune-mod"
 
