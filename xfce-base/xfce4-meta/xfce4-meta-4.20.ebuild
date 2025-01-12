@@ -11,7 +11,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~x86"
 IUSE="
 	archive calendar cdr editor image media minimal mpd pulseaudio
-	remote-fs search +svg upower
+	remote-fs search +svg udev upower
 "
 
 RDEPEND="
@@ -23,7 +23,7 @@ RDEPEND="
 	>=xfce-base/libxfce4util-4.20.0
 	>=xfce-base/libxfce4windowing-4.20.0
 	>=xfce-base/thunar-4.20.0
-	>=xfce-base/thunar-volman-4.20.0
+	udev? ( >=xfce-base/thunar-volman-4.20.0 )
 	>=xfce-base/tumbler-4.20.0
 	>=xfce-base/xfce4-appfinder-4.20.0
 	>=xfce-base/xfce4-panel-4.20.0
