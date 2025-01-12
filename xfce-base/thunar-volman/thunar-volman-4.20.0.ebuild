@@ -20,7 +20,7 @@ IUSE="libnotify udev"
 
 DEPEND="
 	>=dev-libs/glib-2.72.0
-	dev-libs/libgudev:=
+	udev? ( dev-libs/libgudev:= )
 	>=x11-libs/gtk+-3.24.0:3
 	>=xfce-base/exo-0.10.0:=
 	>=xfce-base/libxfce4ui-4.16.0:=
@@ -34,6 +34,7 @@ RDEPEND="
 		virtual/udev
 		>=xfce-base/thunar-1.6[udisks]
 		)
+	!udev? ( >=xfce-base/thunar-1.6 )
 "
 BDEPEND="
 	sys-devel/gettext
