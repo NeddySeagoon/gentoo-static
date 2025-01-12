@@ -8,30 +8,30 @@ HOMEPAGE="https://www.xfce.org/"
 
 LICENSE="metapackage"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~arm64 ~loong ~ppc64 ~riscv ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~x86"
 IUSE="
 	archive calendar cdr editor image media minimal mpd pulseaudio
 	remote-fs search +svg upower
 "
 
 RDEPEND="
-	x11-themes/hicolor-icon-theme
-	>=xfce-base/exo-4.19.2
-	>=xfce-base/garcon-4.19.3
-	>=xfce-base/libxfce4ui-4.19.7
-	>=xfce-base/libxfce4util-4.19.5
-	>=xfce-base/libxfce4windowing-4.19.10
-	>=xfce-base/thunar-4.19.5
-	>=xfce-base/thunar-volman-4.19.1
-	>=xfce-base/tumbler-4.19.3
-	>=xfce-base/xfce4-appfinder-4.19.4
-	>=xfce-base/xfce4-panel-4.19.7
-	>=xfce-base/xfce4-session-4.19.4
-	>=xfce-base/xfce4-settings-4.19.4
 	x11-terms/xfce4-terminal
-	>=xfce-base/xfconf-4.19.5
-	>=xfce-base/xfdesktop-4.19.7
-	>=xfce-base/xfwm4-4.19.1
+	x11-themes/hicolor-icon-theme
+	>=xfce-base/exo-4.20.0
+	>=xfce-base/garcon-4.20.0
+	>=xfce-base/libxfce4ui-4.20.0
+	>=xfce-base/libxfce4util-4.20.0
+	>=xfce-base/libxfce4windowing-4.20.0
+	>=xfce-base/thunar-4.20.0
+	>=xfce-base/thunar-volman-4.20.0
+	>=xfce-base/tumbler-4.20.0
+	>=xfce-base/xfce4-appfinder-4.20.0
+	>=xfce-base/xfce4-panel-4.20.0
+	>=xfce-base/xfce4-session-4.20.0
+	>=xfce-base/xfce4-settings-4.20.0
+	>=xfce-base/xfconf-4.20.0
+	>=xfce-base/xfdesktop-4.20.0
+	>=xfce-base/xfwm4-4.20.0
 	!minimal? (
 		media-fonts/dejavu
 		virtual/freedesktop-icon-theme
@@ -47,5 +47,5 @@ RDEPEND="
 	remote-fs? ( x11-misc/gigolo )
 	search? ( dev-util/catfish )
 	svg? ( gnome-base/librsvg )
-	upower? ( >=xfce-base/xfce4-power-manager-4.19.5 )
+	upower? ( >=xfce-base/xfce4-power-manager-4.20.0 )
 "
