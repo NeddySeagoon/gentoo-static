@@ -44,8 +44,8 @@ RDEPEND="
 	gui? (
 		gnome-base/dconf
 		>=net-libs/gtk-vnc-0.3.8[gtk3(+),introspection]
-		udev? ( net-misc/spice-gtk[usbredir,gtk3,introspection,sasl?])
-		!udev? ( net-misc/spice-gtk[gtk3,introspection,sasl?])
+		udev? ( net-misc/spice-gtk[usbredir,gtk3,introspection,sasl?] )
+		!udev? ( net-misc/spice-gtk[gtk3,introspection,sasl?] )
 		sys-apps/dbus
 		x11-libs/gtk+:3[introspection]
 		|| (
