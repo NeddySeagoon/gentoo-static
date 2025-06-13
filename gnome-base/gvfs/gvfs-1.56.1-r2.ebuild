@@ -19,7 +19,7 @@ RESTRICT="!test? ( test )"
 #	?? ( elogind systemd )
 
 REQUIRED_USE="
-	udev ( 
+	udev? ( 
 		cdda? ( udev )
 		gphoto2? ( udev )
 		mtp? ( udev )
