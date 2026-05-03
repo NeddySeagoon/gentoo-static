@@ -1,4 +1,4 @@
-BDEPEND=virtual/pkgconfig nls? ( sys-devel/gettext ) >=app-portage/elt-patches-20240116 sys-devel/gnuconfig || ( >=dev-build/automake-1.17-r1:1.17 >=dev-build/automake-1.16.5:1.16 ) || ( >=dev-build/autoconf-2.72-r1:2.72 >=dev-build/autoconf-2.71-r6:2.71 ) >=dev-build/libtool-2.4.7-r3
+BDEPEND=virtual/pkgconfig nls? ( sys-devel/gettext ) sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
 DEFINED_PHASES=configure install postinst prepare
 DEPEND=dev-libs/libxml2:2 media-gfx/sane-backends virtual/libusb:1 udev? ( virtual/udev ) gimp? ( media-gfx/gimp:0/2 ) X? ( dev-libs/glib:2 media-libs/libpng:= media-libs/tiff:= virtual/jpeg:= x11-libs/gtk+:2 )
 DESCRIPTION=EPSON Image Scan! for Linux (including sane-epkowa backend)
@@ -13,5 +13,5 @@ REQUIRED_USE=gimp? ( X )
 RESTRICT=test
 SLOT=0
 SRC_URI=http://support.epson.net/linux/src/scanner/iscan/iscan_2.30.4-2.tar.gz doc? ( https://dev.gentoo.org/~flameeyes/avasys/userg_revQ_e.pdf l10n_ja? ( https://dev.gentoo.org/~flameeyes/avasys/userg_revQ_j.pdf ) )
-_eclasses_=gnuconfig	ddeb9f8caff1b5f71a09c75b7534df79	toolchain-funcs	14648d8795f7779e11e1bc7cf08b7536	multilib	b2a329026f2e404e9e371097dda47f96	libtool	6b28392a775f807c8be5fc7ec9a605b9	autotools	7d91cc798a8afd8f4e0c6e9587296ebe	desktop	3a72ffe0d8e1dd73af3a1c8c15a59fed	flag-o-matic	f14aba975c94ccaa9f357a27e3b17ffe
+_eclasses_=gnuconfig	b4fa4889c6f586d6b069215a86dd9e53	toolchain-funcs	58a918e3a42d0156f010dcfd43725be5	libtool	6a96cd90e5da8c7c615015479f46f1a4	autotools	0698802996fcfe9a604eac3c1f6e7112	desktop	26d57169ca094c04be416993844ec8bc	flag-o-matic	fd3558f73f6503093adee69adf41020d
 _md5_=4f10a31603f1fa0994e3007744e133c5
