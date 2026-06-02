@@ -1,31 +1,31 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 MATE_LA_PUNT="yes"
 
-inherit flag-o-matic mate
+inherit flag-o-matic mate virtualx
 
 MINOR=$(($(ver_cut 2) % 2))
 if [[ ${MINOR} -eq 0 ]]; then
-	KEYWORDS="~amd64 ~arm ~arm64 ~loong ~riscv ~x86"
+	KEYWORDS="amd64 ~arm ~arm64 ~loong ~riscv x86"
 fi
 
 DESCRIPTION="Caja file manager for the MATE desktop"
 LICENSE="GPL-2+ LGPL-2+"
 SLOT="0"
 
-IUSE="+introspection +mate nls udev xmp"
+IUSE="+introspection +mate nls selinux udev xmp"
 
 COMMON_DEPEND="
 	>=app-accessibility/at-spi2-core-2.46.0:2
 	>=dev-libs/glib-2.58.1:2
-	>=dev-libs/libxml2-2.4.7:2
+	>=dev-libs/libxml2-2.4.7:2=
 	gnome-base/dconf
 	udev? ( >=gnome-base/gvfs-1.10.1:0[udisks] )
 	!udev? ( >=gnome-base/gvfs-1.10.1:0 )
-	>=mate-base/mate-desktop-1.28.0
+	>=mate-base/mate-desktop-$(ver_cut 1-2)
 	>=media-libs/libexif-0.6.14:0
 	virtual/libintl
 	x11-libs/cairo
@@ -39,13 +39,14 @@ COMMON_DEPEND="
 	x11-libs/libXft
 	x11-libs/libXrender
 	>=x11-libs/pango-1.1.2
-	introspection? ( >=dev-libs/gobject-introspection-0.6.4:= )
+	introspection? ( >=dev-libs/gobject-introspection-1.82.0-r2:= )
+	selinux? ( sys-libs/libselinux )
 	xmp? ( >=media-libs/exempi-1.99.5:2= )
 "
 
 BDEPEND="${COMMON_DEPEND}
 	>=dev-lang/perl-5:=
-	dev-util/gdbus-codegen
+	>=dev-util/gdbus-codegen-2.80.5-r1
 	dev-util/glib-utils
 	dev-util/gtk-doc
 	dev-build/gtk-doc-am
@@ -75,6 +76,10 @@ src_configure() {
 	append-flags -fno-strict-aliasing
 	filter-lto
 
+	# https://bugs.gentoo.org/637414
+	export ac_cv_header_selinux_selinux_h=$(usex selinux yes no)
+	export ac_cv_lib_selinux_is_selinux_enabled=$(usex selinux yes no)
+
 	mate_src_configure \
 		--disable-update-mimedb \
 		$(use_enable introspection) \
@@ -86,7 +91,7 @@ src_test() {
 	unset SESSION_MANAGER
 	unset DBUS_SESSION_BUS_ADDRESS
 
-	Xemake check || die "Test phase failed"
+	virtx emake check || die "Test phase failed"
 }
 
 pkg_postinst() {
