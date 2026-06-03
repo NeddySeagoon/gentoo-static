@@ -11,5 +11,5 @@ LICENSE=GPL-2+ LGPL-2.1
 RDEPEND=sensord? ( net-analyzer/rrdtool virtual/logger ) dev-lang/perl !olde-gentoo? ( !<sys-apps/openrc-0.36 ) olde-gentoo? ( sys-apps/openrc )
 SLOT=0/5.0.0
 SRC_URI=https://github.com/lm-sensors/lm-sensors/archive/V3-6-0.tar.gz -> lm-sensors-3.6.0.tar.gz
-_eclasses_=toolchain-funcs	14648d8795f7779e11e1bc7cf08b7536	multilib	b2a329026f2e404e9e371097dda47f96	linux-info	ea4122ba1d8791a12b78e53f9510a2e3	systemd	54bd206bb5c4efac6ae28b6b006713b0	out-of-source-utils	dbf9e34ee8964084651e25907fa8f52c	multibuild	4650a65187015567b4e041bb9bfdb364	multilib-build	9ac26ea006828266d235e2f0135429b5	multilib-minimal	e9f54d75b074edc47d36994bbc1e2123
+_eclasses_=toolchain-funcs	58a918e3a42d0156f010dcfd43725be5	linux-info	efd923656513c879204fec6638eadee5	systemd	a964c0cbe818b5729da1dbfcee5be861	out-of-source-utils	8e5093bd27b7f541a1913271f25d633a	multibuild	83db098a835f71feb71761f72a694aa2	multilib	fc812e8eb2170022c28272d80a1f9e77	multilib-build	d7802b3638ffc661375c0021cdd19efd	multilib-minimal	e9f54d75b074edc47d36994bbc1e2123
 _md5_=f434882fd3dcab46b8b55fbdfe018325
