@@ -2,7 +2,7 @@ BDEPEND=virtual/pkgconfig nls? ( sys-devel/gettext ) sys-devel/gnuconfig >=app-p
 DEFINED_PHASES=configure install postinst prepare
 DEPEND=dev-libs/libxml2:2 media-gfx/sane-backends virtual/libusb:1 udev? ( virtual/udev ) gimp? ( media-gfx/gimp:0/2 ) X? ( dev-libs/glib:2 media-libs/libjpeg-turbo:= media-libs/libpng:= media-libs/tiff:= x11-libs/gtk+:2 )
 DESCRIPTION=EPSON Image Scan! for Linux (including sane-epkowa backend)
-EAPI=7
+EAPI=9
 HOMEPAGE=http://download.ebz.epson.net/dsc/search/01/search/?OSC=LX
 INHERIT=autotools desktop flag-o-matic
 IUSE=doc gimp l10n_ja nls udev X
@@ -14,4 +14,4 @@ RESTRICT=test
 SLOT=0
 SRC_URI=http://support.epson.net/linux/src/scanner/iscan/iscan_2.30.4-2.tar.gz doc? ( https://dev.gentoo.org/~flameeyes/avasys/userg_revQ_e.pdf l10n_ja? ( https://dev.gentoo.org/~flameeyes/avasys/userg_revQ_j.pdf ) )
 _eclasses_=gnuconfig	b4fa4889c6f586d6b069215a86dd9e53	toolchain-funcs	58a918e3a42d0156f010dcfd43725be5	libtool	6a96cd90e5da8c7c615015479f46f1a4	autotools	0698802996fcfe9a604eac3c1f6e7112	desktop	26d57169ca094c04be416993844ec8bc	flag-o-matic	fd3558f73f6503093adee69adf41020d
-_md5_=10dcf91aa70c4de1784699fde1b2ca4a
+_md5_=180d4a94b1b9d44c20d6ae3aaf1cc10e
